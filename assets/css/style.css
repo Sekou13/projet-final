@@ -1,0 +1,271 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    color: white;
+     }
+     
+    
+      
+    
+.navbar {
+    
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: black;
+    
+}
+.navbar a{
+    color: rgb(25, 255, 25);
+}
+.navbar .logo{
+    font-size: 2em;
+    font-weight: bold;
+}
+.navbar .nav-links ul{
+    display: flex;
+    align-items: center;
+}
+.navbar .nav-links ul li{
+    margin: 0 25px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+background-image: url(/assets/images/cloud.jpg);
+background-repeat: no-repeat;
+background-size: cover;
+
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: solid black 10px;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 56px;
+    font-weight: 900;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+p {
+    font-size: 18px;
+    
+    margin-top: 20px;
+}
+.image-content img{
+                 width: 500px;
+                 height: auto;
+                 display: flex;
+                 justify-content: right;
+                 flex-direction: row-reverse;
+                 
+                 
+}
+.text-content, .image {
+    max-width: 50%;
+}
+.image img {
+    margin-left: 0;
+}
+
+
+.image-content2 img{
+    width: 400px;
+    height: auto;
+    object-fit: cover;
+   
+}
+
+
+
+
+.text-content2{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    border: 10px solid black;
+    flex-direction: row-reverse;
+}
+.text{
+    width: 30%;
+}
+.container2{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: solid black 10px;
+    padding: 20px;
+
+}
+
+
+
+.image-content2 img{
+    border-radius: 50%;
+    
+
+    
+}
+.image-content3 img {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+.container3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: column-reverse;
+    border: solid black 10px;
+   
+   
+}
+.text-content3{
+   text-align: center;
+    
+    width: 20%;
+    
+}
+
+footer{
+   
+    background-color: black;
+   
+}
+.social-media img{
+    width: 50px;
+    height: auto;
+}
+
+.img1, .image-content2 img, .image-content3 img {
+   
+    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+}
+
+
+.img1:hover, .image-content2 img:hover, .image-content3 img:hover {
+    transform: scale(1.1); /
+   
+}
+
+
+@keyframes fadeInZoom {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes effect{
+    0%{
+        transform:scale(100%) ;
+       
+
+    }
+    100%{
+        transform: scale(110%);
+       
+    }
+}
+a{
+    animation: effect 1s infinite ;
+}
+
+.img1, .image-content2 img, .image-content3 img {
+    animation: fadeInZoom 1s ease-out;
+}
+
+.partenaires h2{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+@media screen and (max-width: 999px) {
+    header{
+        flex-direction: column;
+        justify-content: center;
+        
+        
+        
+    }
+    
+    .nav-links{
+        flex-direction: column;
+        justify-content: center;
+        display: block;
+
+}
+.container{
+    display: block;
+    
+        justify-content: center;
+        text-align: center;
+}
+        .container2{
+            
+        justify-content: center;
+        }
+        .container3{
+            
+        justify-content: center;
+        }
+        
+        .text-content3{
+            width: auto;
+        }
+        
+        .image-content{
+            width: 100%;
+
+        }
+        .image-content2 img{
+            width: 100%;
+        }
+        .image-content img{
+            width: 100%;
+        }
+        .navbar .nav-links ul{
+            display: block;
+        }
+    }
+   
+    
+h1{
+    color: white;
+}
+
+.contact-button {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.contact-button:hover {
+    background-color: #45a049;
+}
+
+#contact-form {
+    margin-top: 50px;}
