@@ -1,0 +1,83 @@
+{% extends "../layout/base.html.twig" %}
+
+{% block main %}
+<main class="bg-gray-100 py-12">
+    <section class="container mx-auto px-4">
+        <!-- Section "Trouver La Voiture Parfaite" -->
+        <div class="bg-[#EEF0FC] p-8 rounded-lg shadow-md mb-12"> <!-- Couleur de fond appliquée ici -->
+            <h1 class="text-3xl font-bold text-center text-blue-800 mb-6">Trouver La Voiture Parfaite</h1>
+            
+            <!-- Filtres -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4 mb-6">
+                <select class="p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <option value="">Marque</option>
+                    <!-- Ajoutez d'autres options de marques ici -->
+                </select>
+                <select class="p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <option value="">Kilométrage</option>
+                    <!-- Ajoutez d'autres options de kilométrage ici -->
+                </select>
+                <select class="p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <option value="">Prix</option>
+                    <!-- Ajoutez d'autres options de prix ici -->
+                </select>
+                <select class="p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <option value="">Type</option>
+                    <!-- Ajoutez d'autres options de type de voiture ici -->
+                </select>
+                <select class="p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <option value="">Transmission</option>
+                    <!-- Ajoutez d'autres options de transmission ici -->
+                </select>
+            </div>
+
+            <!-- Barre de recherche -->
+            <div class="mb-6">
+                <input 
+                    type="text" 
+                    placeholder="Recherchez une marque, un modèle..." 
+                    class="w-full p-2 border border-black  focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+            </div>
+
+            <!-- Image de la voiture -->
+            <div class="flex justify-center">
+                <img src="/images/m4.png" alt="Image d'une voiture" class="rounded-lg shadow-md w-full max-w-2xl">
+            </div>
+        </div> 
+
+        <!-- Section "Nos Services" -->
+        <div class=" text-black p-8 rounded-lg shadow-md mb-12">
+            <h2 class="text-2xl font-bold text-center mb-8">Nos Services</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Service 1 : Découvrez Nos Voitures -->
+<div class="bg-blue-100 border border-blue-500 p-6 rounded-lg shadow-md flex justify-between items-center">
+    <div>
+        <h3 class="text-xl font-bold text-blue-800 mb-2">Découvrez Nos Voitures</h3>
+        <p class="text-gray-700 mb-4">"Découvrez nos véhicules disponibles en stock, prêts à partir."</p>
+        <a href="/cars" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 border border-gray-600 rounded shadow">
+            Cliquez-ici
+        </a>
+    </div>
+    <div>
+        <svg class="w-16 h-16 text-gray-700" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M5 11h14V9H5v2zm14 2H5v2h14v-2zm-4 4h-6v2h6v-2z"/>
+        </svg>
+    </div>
+</div>
+
+
+                <!-- Service 2 : Recherche Personnalisée -->
+<div class="bg-[#FFEAF3] text-gray-800 p-6 rounded-lg shadow-sm border border-pink-300">
+    <h3 class="text-xl font-bold text-blue-800 mb-4">Recherche Personnalisée</h3>
+    <p class="mb-4">"Confiez-nous votre recherche pour trouver la voiture parfaite."</p>
+    <div class="bg-gray-200 h-40 rounded-lg flex items-center justify-center">
+        <!-- Tu peux ajouter une icône ou une image ici -->
+    </div>
+</div>
+
+
+    </section>
+</main>
+{% endblock %}

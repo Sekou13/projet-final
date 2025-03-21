@@ -1,0 +1,90 @@
+{% extends "../layout/base.html.twig" %}
+
+
+{% block main %}
+<div class="max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg">
+    <form action="/addCar" method="POST" enctype="multipart/form-data" class="space-y-4">
+        <div>
+            <label class="block text-sm font-medium text-gray-700">Marque</label>
+            <input type="text" name="brand"  class="w-full p-2 border rounded-lg">
+        </div>
+
+        <div>
+            <label class="block text-sm font-medium text-gray-700">Modèle</label>
+            <input type="text" name="model"  class="w-full p-2 border rounded-lg">
+        </div>
+
+        <div>
+            <label class="block text-sm font-medium text-gray-700">Année</label>
+            <input type="number" name="year"  class="w-full p-2 border rounded-lg">
+        </div>
+
+        <div>
+            <label class="block text-sm font-medium text-gray-700">Prix</label>
+            <input type="number" name="price"  class="w-full p-2 border rounded-lg">
+        </div>
+
+        <div>
+            <label class="block text-sm font-medium text-gray-700">Chevaux</label>
+            <input type="number" name="horsepower"  class="w-full p-2 border rounded-lg">
+        </div>
+
+        <div>
+            <label class="block text-sm font-medium text-gray-700">Type de véhicule</label>
+            <select name="type"  class="w-full p-2 border rounded-lg">
+                <option value="Berline">Berline</option>
+                <option value="SUV">SUV</option>
+                <option value="Coupé">Coupé</option>
+                <option value="Cabriolet">Cabriolet</option>
+                <option value="Utilitaire">Utilitaire</option>
+            </select>
+        </div>
+
+        <div>
+            <label class="block text-sm font-medium text-gray-700">Transmission</label>
+            <select name="transmission"  class="w-full p-2 border rounded-lg">
+                <option value="Manual">Manuelle</option>
+                <option value="Automatic">Automatique</option>
+            </select>
+        </div>
+
+        <div>
+            <label class="block text-sm font-medium text-gray-700">Carburant</label>
+            <select name="fuelType"  class="w-full p-2 border rounded-lg">
+                <option value="Essence">Essence</option>
+                <option value="Diesel">Diesel</option>
+                <option value="Hybrid">Hybride</option>
+                <option value="Electrique">Électrique</option>
+            </select>
+        </div>
+
+        <div>
+            <label class="block text-sm font-medium text-gray-700">Kilométrage</label>
+            <input type="number" name="mileage"  class="w-full p-2 border rounded-lg">
+        </div>
+
+        <div>
+            <label class="block text-sm font-medium text-gray-700">Couleur</label>
+            <input type="text" name="color"  class="w-full p-2 border rounded-lg">
+        </div>
+
+        <div>
+            <label class="block text-sm font-medium text-gray-700">Images</label>
+            <input type="file" name="images" accept="image/*" multiple  class="w-full p-2 border rounded-lg">
+            <p class="text-sm text-gray-500">Vous pouvez ajouter jusqu'à 5 images</p>
+        </div>
+
+        <div>
+            <label class="block text-sm font-medium text-gray-700">Status</label>
+            <select name="status"  class="w-full p-2 border rounded-lg">
+                <option value="Neuf">Neuf</option>
+                <option value="Occasion">Occasion</option>
+            </select>
+        </div>
+
+        <div>
+            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg">Ajouter le véhicule</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

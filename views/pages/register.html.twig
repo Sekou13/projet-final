@@ -1,0 +1,73 @@
+{% extends "../layout/base.html.twig" %}
+
+{% block style %}
+{% endblock %}
+
+{% block title %}
+    <title>{{ title }}</title>
+{% endblock %}
+
+{% block main %}
+<main class="relative flex items-center justify-center min-h-screen bg-cover bg-center" style="background-image: url('/images/background.jpg');">
+    
+    <!-- Formulaire avec effet Glassmorphism -->
+    <section class="relative bg-white/10 backdrop-blur-lg p-8 rounded-2xl shadow-lg w-full max-w-md border border-white/20">
+        <div class="text-center mb-6">
+            <h2 class="text-2xl font-bold text-white">Inscription</h2>
+            <a href="/login" class="text-blue-400 hover:text-blue-300 text-sm">Déjà inscrit ? Connectez-vous</a>
+        </div>
+
+        <form action="/register" method="post" class="space-y-4">
+            <!-- Champ Nom -->
+            <div>
+                <label for="firstName" class="block text-gray-300">Nom</label>
+                <input id="firstName" type="text" name="firstName" class="w-full p-3 rounded-lg bg-white/20 text-white border border-white/30 focus:ring-2 focus:ring-blue-500 focus:outline-none" value="{{ old.firstName }}">
+                {% if error.firstName %}
+                    <p class="text-red-400 text-sm">{{ error.firstName }}</p>
+                {% endif %}
+            </div>
+
+            <!-- Champ Prénom -->
+            <div>
+                <label for="lastName" class="block text-gray-300">Prénom</label>
+                <input id="lastName" type="text" name="lastName" class="w-full p-3 rounded-lg bg-white/20 text-white border border-white/30 focus:ring-2 focus:ring-blue-500 focus:outline-none" value="{{ old.lastName }}">
+                {% if error.lastName %}
+                    <p class="text-red-400 text-sm">{{ error.lastName }}</p>
+                {% endif %}
+            </div>
+
+            <!-- Champ Email -->
+            <div>
+                <label for="email" class="block text-gray-300">Mail</label>
+                <input id="email" type="email" name="email" class="w-full p-3 rounded-lg bg-white/20 text-white border border-white/30 focus:ring-2 focus:ring-blue-500 focus:outline-none" value="{{ old.email }}">
+                {% if error.email %}
+                    <p class="text-red-400 text-sm">{{ error.email }}</p>
+                {% endif %}
+            </div>
+
+            <!-- Champ Mot de passe -->
+            <div>
+                <label for="password" class="block text-gray-300">Mot de Passe</label>
+                <input id="password" type="password" name="password" class="w-full p-3 rounded-lg bg-white/20 text-white border border-white/30 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                {% if error.password %}
+                    <p class="text-red-400 text-sm">{{ error.password }}</p>
+                {% endif %}
+            </div>
+
+            <!-- Champ Confirmation du mot de passe -->
+            <div>
+                <label for="confirmPassword" class="block text-gray-300">Confirmez Mot de Passe</label>
+                <input id="confirmPassword" type="password" name="confirmPassword" class="w-full p-3 rounded-lg bg-white/20 text-white border border-white/30 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                {% if error.confirmPassword %}
+                    <p class="text-red-400 text-sm">{{ error.confirmPassword }}</p>
+                {% endif %}
+            </div>
+
+            <!-- Bouton d'inscription -->
+            <div>
+                <button type="submit" class="w-full bg-black text-white p-3 rounded-lg hover:bg-blue-500 transition">S'inscrire</button>
+            </div>
+        </form>
+    </section>
+</main>
+{% endblock %}

@@ -1,0 +1,69 @@
+{% extends "../layout/base.html.twig" %}
+
+{% block title %}
+    <title>Nos Véhicules</title>
+{% endblock %}
+
+{% block main %}
+    <main class="min-h-screen bg-gray-100 py-10 px-4">
+        <div class="max-w-6xl mx-auto">
+
+            <!-- Liste des véhicules -->
+            <div class="flex justify-center gap-10 flex-wrap">
+                {% for car in cars %}
+                    <div class="bg-white p-4 rounded-xl shadow-lg w-80 text-center">
+                        
+                        <!-- Image du véhicule -->
+                        <div class="relative">
+                            {% if car.images|length > 0 %}
+                                <img src="{{ car.images[0].url }}" alt="{{ car.model }}" class="rounded-lg shadow-md w-full">
+                            {% else %}
+                                <img src="/images/default-car.png" alt="Image non disponible" class="rounded-lg shadow-md w-full">
+                            {% endif %}
+                        </div>
+
+                        <!-- Infos du véhicule -->
+                        <div class="text-left px-2 mt-3 flex flex-col items-start">
+                            <h3 class="text-lg font-bold">
+                                {{ car.brand }} {{ car.model }}
+                            </h3>
+                            <span class="mt-1 px-2 py-1 text-xs font-bold text-white rounded
+                                         {% if car.status == 'NEUF' %} bg-blue-500 {% else %} bg-orange-500 {% endif %}">
+                                {{ car.status }}
+                            </span>
+                        </div>
+
+                        <p class="text-gray-500 text-sm text-left px-2 mt-2">Offre concessionnaire</p>
+                        <p class="text-xl font-semibold text-gray-800 text-left px-2">{{ car.price }} €</p>
+
+                        <!-- Icônes d'infos -->
+                        <div class="flex justify-between items-center text-gray-500 text-sm mt-3 px-4">
+                            <div class="flex items-center gap-1">
+                                <img src="/images/essence.png" class="w-5 h-5" alt="Carburant">
+                                <span class="lowercase">{{ car.fuelType }}</span>
+                            </div>
+                            <div class="flex items-center gap-1">
+                                <img src="/images/transmission.png" class="w-5 h-5" alt="Transmission">
+                                <span class="lowercase">{{ car.transmission }}</span>
+                            </div>
+                            <div class="flex items-center gap-1">
+                                <img src="/images/compteur.png" class="w-5 h-5" alt="Km">
+                                <span class="lowercase">{{ car.horsepower }} ch</span>
+                            </div>
+                        </div>
+
+                        <!-- Localisation repositionnée -->
+                        <div class="text-left px-2 mt-3 flex items-center gap-1 text-gray-700 font-medium">
+                            <span>📍Concession Marseille</span> 
+                        </div>
+
+                        <!-- Bouton Détails -->
+                        <a href="/car/{{ car.id }}" class="block text-center mt-4 bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition">
+                            Afficher Les Détails
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </main>
+{% endblock %}

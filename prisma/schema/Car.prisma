@@ -1,0 +1,42 @@
+
+enum Transmission {
+    MANUAL
+    AUTOMATIC
+}
+
+enum FuelType {
+    ESSENCE
+    DIESEL
+    ELECTRIC
+    HYBRID 
+}
+
+enum Status {
+    NEUF
+    OCCASION
+}
+ 
+
+model Car {
+    id           Int         @id @default(autoincrement())
+    model        String
+    year         Int
+    brand        String
+    price        Int
+    horsepower   Int
+    transmission Transmission
+    fuelType     FuelType
+    mileage      Int
+    color        String
+    dealershipId Int?
+    dealership   Dealership?  @relation(fields: [dealershipId], references: [id])
+    images       CarImage[]  
+    status       Status
+}
+
+model CarImage {
+    id    Int    @id @default(autoincrement())
+    carId Int
+    car   Car    @relation(fields: [carId], references: [id], onDelete: Cascade)
+    url   String 
+}

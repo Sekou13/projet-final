@@ -1,0 +1,12 @@
+model Dealership {
+    id       Int    @id @default(autoincrement())
+    name     String
+    location String
+    mail     String
+    phone    String
+    password String
+    cars     Car[]
+    role     Role   @default(ADMIN)
+    
+}
+
