@@ -6,8 +6,13 @@ const carRouter = require('./router/carRouter');
 const adminRouter = require('./router/adminRouter'); 
 
 const app = express();
+
 require("dotenv").config()
 
+const path = require('path');
+
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'twig');
 app.use("/uploads", express.static("uploads"));
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
