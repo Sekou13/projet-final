@@ -9,7 +9,6 @@ const app = express();
 require("dotenv").config()
 
 app.use("/uploads", express.static("uploads"));
-app.use(express.static('src'));
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 
